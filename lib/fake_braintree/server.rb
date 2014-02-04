@@ -1,6 +1,6 @@
 require 'capybara'
 require 'capybara/server'
-require 'rack/handler/thin'
+require 'rack/handler/puma'
 
 class FakeBraintree::Server
   def boot
@@ -16,7 +16,7 @@ class FakeBraintree::Server
   def with_thin_runner
     default_server_process = Capybara.server
     Capybara.server do |app, port|
-      Rack::Handler::Thin.run(app, Port: port)
+      Rack::Handler::Puma.run(app, Port: port)
     end
     yield
   ensure
