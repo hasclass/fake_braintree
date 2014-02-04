@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'i18n'
   s.add_dependency 'sinatra'
   s.add_dependency 'braintree', '~> 2.5'
-  s.add_dependency 'puma'
+  s.add_dependency 'puma', "~> 2.0.0.b7"
 
   s.add_development_dependency 'rspec', '~> 2.12.0'
   # Capybara 2.1.0 requires 1.9.3+ so we install a version that works with
